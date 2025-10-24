@@ -2,11 +2,9 @@ import 'package:aevora/src/presentation/screens/HomeScreen/widgets/ongoingtask/n
 import 'package:aevora/src/presentation/screens/HomeScreen/widgets/ongoingtask/navigation/widgets/subtask_button.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:get/get_core/src/get_main.dart';
 import 'package:google_fonts/google_fonts.dart';
-
 import '../../../../widgets/submit_button.dart';
-import '../../../home_screen.dart';
+import '../../../default_main_screen.dart';
 import 'widgets/audio_container.dart';
 import 'widgets/description_container.dart';
 import 'widgets/figma_url_container.dart';
@@ -16,6 +14,7 @@ class OngoingtaskViewpage extends StatelessWidget {
   final String assigned;
   final String reported;
   final String deadline;
+
   const OngoingtaskViewpage({
     super.key,
     required this.title,
@@ -36,18 +35,18 @@ class OngoingtaskViewpage extends StatelessWidget {
         leading: IconButton(
           icon: const Icon(Icons.arrow_back, color: Colors.white),
           onPressed: () {
-            Get.off(const Homescreen());
+            // GetX-safe navigation
+            Get.off(() => const DefaultMainScreen());
           },
         ),
         title: Text(
           title,
           style: GoogleFonts.zenDots(
             color: const Color(0xFFC5B5FF),
-            fontSize: screenWidth * 0.05, // responsive font
+            fontSize: screenWidth * 0.05,
             fontWeight: FontWeight.w600,
           ),
         ),
-        // centerTitle: true,
       ),
       body: SafeArea(
         child: SingleChildScrollView(
@@ -100,6 +99,7 @@ class OngoingtaskViewpage extends StatelessWidget {
                         fontWeight: FontWeight.w600,
                       ),
                     ),
+                    const SizedBox(width: 8),
                     Text(
                       assigned,
                       style: GoogleFonts.zenDots(
@@ -124,6 +124,7 @@ class OngoingtaskViewpage extends StatelessWidget {
                         fontWeight: FontWeight.w600,
                       ),
                     ),
+                    const SizedBox(width: 8),
                     Text(
                       reported,
                       style: GoogleFonts.zenDots(
@@ -148,6 +149,7 @@ class OngoingtaskViewpage extends StatelessWidget {
                         fontWeight: FontWeight.w600,
                       ),
                     ),
+                    const SizedBox(width: 8),
                     Text(
                       deadline,
                       style: GoogleFonts.zenDots(
@@ -257,13 +259,11 @@ class OngoingtaskViewpage extends StatelessWidget {
             SubmitButton(
               text: "Submit",
               onPressed: () {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(builder: (_) => TaskcompletionPage()),
-                );
+                // GetX-safe navigation
+                Get.to(() => TaskcompletionPage());
               },
             ),
-            SizedBox(width: 16),
+            const SizedBox(width: 16),
             SubtaskButton(text: 'Subtask'),
           ],
         ),

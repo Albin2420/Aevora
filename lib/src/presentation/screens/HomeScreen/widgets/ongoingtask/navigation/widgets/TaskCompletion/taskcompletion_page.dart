@@ -1,21 +1,17 @@
-
-
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:get/get_core/src/get_main.dart';
 import 'package:google_fonts/google_fonts.dart';
 import '../../../../../../../controller/navigation/navigation_controller.dart';
-
 import '../../../../../../widgets/submit_button.dart';
-import '../../../../../home_screen.dart';
-import '../../ongoingtask_viewpage.dart';
+import '../../../../../default_main_screen.dart';
 
 class TaskcompletionPage extends StatelessWidget {
   const TaskcompletionPage({super.key});
 
   @override
   Widget build(BuildContext context) {
-    final  navController = Get.find<NavigationController>();
+    final navController = Get.find<NavigationController>();
     final screenWidth = MediaQuery.of(context).size.width;
 
     return Scaffold(
@@ -79,11 +75,7 @@ class TaskcompletionPage extends StatelessWidget {
                     borderRadius: BorderRadius.circular(12),
                   ),
                   child: const Center(
-                    child: Icon(
-                      Icons.add,
-                      color: Colors.grey,
-                      size: 40,
-                    ),
+                    child: Icon(Icons.add, color: Colors.grey, size: 40),
                   ),
                 ),
               ),
@@ -109,8 +101,10 @@ class TaskcompletionPage extends StatelessWidget {
                     fillColor: Colors.white,
                     hintText: "Paste your Git URL here...",
                     hintStyle: const TextStyle(color: Colors.grey),
-                    contentPadding:
-                    const EdgeInsets.symmetric(horizontal: 16, vertical: 14),
+                    contentPadding: const EdgeInsets.symmetric(
+                      horizontal: 16,
+                      vertical: 14,
+                    ),
                     border: OutlineInputBorder(
                       borderRadius: BorderRadius.circular(12),
                       borderSide: BorderSide.none,
@@ -142,8 +136,10 @@ class TaskcompletionPage extends StatelessWidget {
                     fillColor: Colors.white,
                     hintText: "Write your comments here...",
                     hintStyle: const TextStyle(color: Colors.grey),
-                    contentPadding:
-                    const EdgeInsets.symmetric(horizontal: 16, vertical: 14),
+                    contentPadding: const EdgeInsets.symmetric(
+                      horizontal: 16,
+                      vertical: 14,
+                    ),
                     border: OutlineInputBorder(
                       borderRadius: BorderRadius.circular(12),
                       borderSide: BorderSide.none,
@@ -175,8 +171,10 @@ class TaskcompletionPage extends StatelessWidget {
                     fillColor: Colors.white,
                     hintText: "Enter dependencies here...",
                     hintStyle: const TextStyle(color: Colors.grey),
-                    contentPadding:
-                    const EdgeInsets.symmetric(horizontal: 16, vertical: 14),
+                    contentPadding: const EdgeInsets.symmetric(
+                      horizontal: 16,
+                      vertical: 14,
+                    ),
                     border: OutlineInputBorder(
                       borderRadius: BorderRadius.circular(12),
                       borderSide: BorderSide.none,
@@ -193,17 +191,11 @@ class TaskcompletionPage extends StatelessWidget {
       bottomNavigationBar: Padding(
         padding: const EdgeInsets.fromLTRB(20, 10, 20, 30),
         child: Row(
-          children:  [
-            // SubmitButton(
-            //   text: "Submit",
-            //   onPressed: () {
-            //     Navigator.push(context,  MaterialPageRoute(builder: (_) => OngoingtaskViewpage()));
-            //   },
-            // ),
+          children: [
             SubmitButton(
               text: "Submit",
               onPressed: () {
-                Get.offAll(() => const Homescreen());
+                Get.offAll(() => const DefaultMainScreen());
               },
             ),
           ],

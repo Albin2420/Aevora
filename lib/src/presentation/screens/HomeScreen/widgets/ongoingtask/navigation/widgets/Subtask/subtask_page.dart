@@ -1,11 +1,8 @@
-
 import 'package:aevora/src/presentation/screens/HomeScreen/widgets/ongoingtask/navigation/widgets/Subtask/widgets/subtasks_view_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:get/get_core/src/get_main.dart';
 import 'package:google_fonts/google_fonts.dart';
-
-import '../../ongoingtask_viewpage.dart';
 
 class SubtaskPage extends StatelessWidget {
   const SubtaskPage({super.key});
@@ -61,11 +58,16 @@ class SubtaskPage extends StatelessWidget {
                         color: Colors.white,
                         borderRadius: BorderRadius.circular(12),
                       ),
-                      child: const Icon(Icons.add, color: Colors.black, size: 26),
+                      child: const Icon(
+                        Icons.add,
+                        color: Colors.black,
+                        size: 26,
+                      ),
                     ),
                   ],
                 ),
               ),
+
               /// SUBTASK TITLE
               Padding(
                 padding: const EdgeInsets.only(left: 30, top: 25, bottom: 10),
@@ -88,7 +90,9 @@ class SubtaskPage extends StatelessWidget {
                     filled: true,
                     fillColor: Colors.white,
                     contentPadding: const EdgeInsets.symmetric(
-                        horizontal: 16, vertical: 14),
+                      horizontal: 16,
+                      vertical: 14,
+                    ),
                     border: OutlineInputBorder(
                       borderRadius: BorderRadius.circular(12),
                       borderSide: BorderSide.none,
@@ -120,7 +124,9 @@ class SubtaskPage extends StatelessWidget {
                     filled: true,
                     fillColor: Colors.white,
                     contentPadding: const EdgeInsets.symmetric(
-                        horizontal: 16, vertical: 14),
+                      horizontal: 16,
+                      vertical: 14,
+                    ),
                     border: OutlineInputBorder(
                       borderRadius: BorderRadius.circular(12),
                       borderSide: BorderSide.none,
@@ -131,8 +137,12 @@ class SubtaskPage extends StatelessWidget {
 
               /// ACTION BUTTONS (Green + Red)
               Padding(
-                padding:
-                const EdgeInsets.only(left: 30, right: 30, top: 25, bottom: 25),
+                padding: const EdgeInsets.only(
+                  left: 30,
+                  right: 30,
+                  top: 25,
+                  bottom: 25,
+                ),
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
@@ -144,9 +154,13 @@ class SubtaskPage extends StatelessWidget {
                         color: Colors.green,
                         borderRadius: BorderRadius.circular(12),
                       ),
-                      child: const Icon(Icons.add_box_outlined, color: Colors.white, size: 28),
+                      child: const Icon(
+                        Icons.add_box_outlined,
+                        color: Colors.white,
+                        size: 28,
+                      ),
                     ),
-                    SizedBox(width: 16,),
+                    SizedBox(width: 16),
                     // Red Trash Button
                     Container(
                       width: 45,
@@ -155,8 +169,11 @@ class SubtaskPage extends StatelessWidget {
                         color: Colors.red,
                         borderRadius: BorderRadius.circular(12),
                       ),
-                      child:
-                      const Icon(Icons.delete, color: Colors.white, size: 26),
+                      child: const Icon(
+                        Icons.delete,
+                        color: Colors.white,
+                        size: 26,
+                      ),
                     ),
                   ],
                 ),
@@ -174,31 +191,19 @@ class SubtaskPage extends StatelessWidget {
               ),
               ListView.separated(
                 shrinkWrap: true, // Important if inside a Column
-                physics: const NeverScrollableScrollPhysics(), // Disable scrolling if inside a Column
+                physics:
+                    const NeverScrollableScrollPhysics(), // Disable scrolling if inside a Column
                 itemCount: 3,
                 separatorBuilder: (context, index) => const SizedBox(height: 5),
                 itemBuilder: (context, index) => const Padding(
                   padding: EdgeInsets.symmetric(vertical: 2),
                   child: SubtasksViewWidget(),
                 ),
-              )
+              ),
             ],
           ),
         ),
       ),
-      // bottomNavigationBar: Padding(
-      //   padding: const EdgeInsets.fromLTRB(20, 10, 20, 30),
-      //   child: Row(
-      //     children:  [
-      //       SubmitButton(
-      //         text: "Submit",
-      //         onPressed: () {
-      //           Navigator.push(context,  MaterialPageRoute(builder: (_) => TaskcompletionPage()));
-      //         },
-      //       ),
-      //     ],
-      //   ),
-      // ),
     );
   }
 }

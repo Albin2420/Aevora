@@ -1,4 +1,3 @@
-
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -22,14 +21,13 @@ class OngoingtaskWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: () {
-        Get.to(
-              () => const OngoingtaskViewpage( //----------------------------------R
-            title: 'Frontend Development',
-            assigned: 'Albin',
-            reported: 'Albin',
-            deadline: '10/11/2025',
-          ),
-        );
+        // Pass widget builder function instead of instance
+        Get.to(() => OngoingtaskViewpage(
+          title: title,
+          assigned: 'Albin',
+          reported: 'Albin',
+          deadline: deadline,
+        ));
       },
       child: Container(
         width: double.infinity,
@@ -114,3 +112,4 @@ class OngoingtaskWidget extends StatelessWidget {
     );
   }
 }
+

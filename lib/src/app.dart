@@ -1,4 +1,4 @@
-import 'package:aevora/src/presentation/screens/HomeScreen/home_screen.dart';
+import 'package:aevora/src/presentation/screens/HomeScreen/default_main_screen.dart';
 import 'package:aevora/src/presentation/screens/Splash/splashscreen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_easyloading/flutter_easyloading.dart';
@@ -13,7 +13,7 @@ class Aevora extends StatelessWidget {
       title: 'Aevora',
       debugShowCheckedModeBanner: false,
       builder: EasyLoading.init(),
-      home: Homescreen(),
+      home: DefaultMainScreen(),
     );
   }
 }

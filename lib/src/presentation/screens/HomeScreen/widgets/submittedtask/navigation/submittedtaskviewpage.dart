@@ -1,14 +1,19 @@
-
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
-
-import '../../../home_screen.dart';
+import '../../../default_main_screen.dart';
 
 class Submittedtaskviewpage extends StatelessWidget {
   final String url;
   final String desc;
   final String dependency;
-  const Submittedtaskviewpage({super.key,required this.url,required this.desc,required this.dependency});
+
+  const Submittedtaskviewpage({
+    super.key,
+    required this.url,
+    required this.desc,
+    required this.dependency,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -22,10 +27,8 @@ class Submittedtaskviewpage extends StatelessWidget {
         leading: IconButton(
           icon: const Icon(Icons.arrow_back, color: Colors.white),
           onPressed: () {
-            Navigator.pushReplacement(
-              context,
-              MaterialPageRoute(builder: (context) => const Homescreen()),
-            );
+            // GetX-safe navigation
+            Get.off(() => const DefaultMainScreen());
           },
         ),
         title: Text(
@@ -169,7 +172,7 @@ class Submittedtaskviewpage extends StatelessWidget {
                     borderRadius: BorderRadius.circular(12),
                   ),
                   child: Text(
-                  dependency,
+                    dependency,
                     style: GoogleFonts.inter(
                       color: Colors.black,
                       fontWeight: FontWeight.w500,
